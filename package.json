@@ -11,6 +11,13 @@
     },
     "homepage": "http://dirim.co/jquery-listswap",
     "author": "Berkan Dirim <berkandirim@gmail.com> (http://dirim.co/)",
+    "keywords": [
+        "jquery",
+        "plugin",
+        "select",
+        "lists",
+        "swap"
+    ],
     "license": "MIT",
     "devDependencies": {
         "grunt": "^0.4.5",
