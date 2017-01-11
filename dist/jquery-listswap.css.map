@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAAA,kBAAmB,CACf,gBAAgB,CAAE,KAAK,CAG3B,cAAe,CACX,MAAM,CAAE,SAAS,CAOrB,mBAAoB,CAChB,OAAO,CAAE,YAAY,CAOzB,uBAAwB,CACpB,OAAO,CAAE,YAAY",
+"sources": ["../lib/_jquery-listswap.scss"],
+"names": [],
+"file": "jquery-listswap.css"
+}
