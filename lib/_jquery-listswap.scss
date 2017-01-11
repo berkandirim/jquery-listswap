@@ -1,23 +1,111 @@
-.listswap-selected {
-    background-color: coral;
+/**
+ * @author Berkan Dirim
+ */
+
+$prefix: 'listswap';
+$border: #ccc;
+$button: #ddd; 
+$selected: lightskyblue; 
+$radius: 4px;
+
+/** -------------------------------------------
+ 	List Swap Styles
+    ------------------------------------------- **/
+
+[class^="#{$prefix}-"], input {
+    box-sizing: border-box;
 }
 
-.listswap-list {
-    border: 1px solid;
+.#{$prefix}-wrap {
+    width: 100%;
+    &:after {
+        content: '';
+        display: table;
+        clear: both;
+    }
 }
 
-.listswap-add {
-    
+.#{$prefix}-hidden {
+    position: absolute;
+    overflow: hidden;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    border: 0;
+    clip: rect(0, 0, 0, 0);
+    clip-path: inset(0 0 0 0);
 }
 
-.listswap-add:after {
-    content: '\00a0\2192';
+.#{$prefix}-selected {
+    background-color: $selected;
 }
 
-.listswap-remove {
-
+.#{$prefix}-list {
+    width: 40%;
+    min-height: 200px;
+    float: left;
+    border: 1px solid $border;
+    border-radius: $radius;
+    list-style: none;
+    padding-left: 0;
+    li {
+        padding: 4px 8px;
+    }
 }
 
-.listswap-remove:before {
-    content: '\2190\00a0';
+.#{$prefix}-controls {
+    float: left;
+    width: 20%;
+    list-style: none;
+    padding-left: 0;
+    padding-top: 20px;
+    li {
+        margin: 10px;
+        padding: 4px 8px;
+        background-color: $button;
+        border-radius: $radius;
+        text-align: center;
+        cursor: pointer;
+        transition: background-color ease-in 200ms;
+        &:hover {
+            background-color: darken($button, 10%);
+        }
+    }
+}
+
+.#{$prefix}-add {
+    &:after {
+        content: '\00a0\2192';
+    }
+}
+
+.#{$prefix}-remove {
+    &:before {
+        content: '\2190\00a0';
+    }
+}
+
+.#{$prefix}-search {
+    position: relative;
+    padding: 4px;
+    input {
+        width: 100%;
+        padding: 6px 4px;
+        &:focus {
+            outline: 1px solid lightskyblue;
+        }
+    }
+    .clear {
+        display: block;
+        margin: 7px 12px;
+        position: absolute;
+        right: 0;
+        top: 0;
+        cursor:pointer;
+        color: #ccc;
+        &:before {
+            content:"\00d7";
+        }
+    }
 }

@@ -22,6 +22,7 @@
         classes = {
             ready: prefix + '-ready',
             wrap: prefix + '-wrap',
+            hidden: prefix + '-hidden',
             list: prefix + '-list',
             selected: prefix + '-selected',
             controls: prefix + '-controls',
@@ -71,6 +72,7 @@
 
         setLayout: function(el, src, dest, options) {
             el.wrapAll('<div id="' + prefix + '_' + instance + '" class="' + classes.wrap + '">');
+            el.addClass(classes.hidden);
             $('#' + prefix + '_' + instance).append('' +
                 '<ul id="src_list_' + instance + '" class="' + classes.list + '" data-instance="' + instance + '"></ul>' +
                 '<ul id="' + prefix + '_' + instance + '_controls' + '" class="' + classes.controls + '" data-instance="' + instance + '">' +
@@ -139,7 +141,7 @@
                     '<input type="text" id="searchList" name="searchList" value="' + $(select).attr('data-search') + '" />' +
                     '<span class="clear"></span>' +
                     '</div>';
-                list.append(searchData);
+                list.prepend(searchData);
                 if (!$(this).attr('data-text')) {
                     list.find('.' + classes.search).addClass('list-round-class');
                 }

@@ -5,11 +5,20 @@ module.exports = function(grunt) {
         sass: {
             dist: {
                 options: {
+                    style: 'expanded',
+                    sourcemap: 'auto'
+                },
+                files: {
+                    'dist/jquery.listswap.css': 'lib/jquery-listswap.scss'
+                }
+            },
+            dev: {
+                options: {
                     style: 'compressed',
                     sourcemap: 'auto'
                 },
                 files: {
-                    'dist/jquery-listswap.css': 'lib/jquery-listswap.scss'
+                    'dist/jquery.listswap.min.css': 'lib/jquery-listswap.scss'
                 }
             }
         },

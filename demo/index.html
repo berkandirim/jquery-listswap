@@ -3,15 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <title>jQuery List Swap</title>
-    <link rel="stylesheet" type="text/css" href="../dist/jquery-listswap.css" />
+    <link rel="stylesheet" type="text/css" href="../dist/jquery.listswap.min.css" />
     <style>
         body {
+            max-width: 800px;
+            margin: 50px auto;
             font: 14px/1.5 sans-serif;
         }
     </style>
 </head>
 <body>
-
 
 <form method="post">
 
@@ -39,8 +40,11 @@
     
 </form>
 
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-<script src="../dist/jquery.listswap.js"></script>
+<script
+    src="https://code.jquery.com/jquery-2.2.4.min.js"
+    integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+    crossorigin="anonymous"></script>
+<script src="../dist/jquery.listswap.min.js"></script>
 <script>
     $('#source, #destination').listSwap({
         truncate: true,
