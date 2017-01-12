@@ -37,10 +37,6 @@ $radius: 4px;
     clip-path: inset(0 0 0 0);
 }
 
-.#{$prefix}-selected {
-    background-color: $selected;
-}
-
 .#{$prefix}-list {
     width: 40%;
     min-height: 200px;
@@ -51,6 +47,15 @@ $radius: 4px;
     padding-left: 0;
     li {
         padding: 4px 8px;
+        &:hover {
+            background-color: lightyellow;
+        }
+    }
+}
+
+li.#{$prefix}-selected {
+    &, &:hover {
+        background-color: $selected;
     }
 }
 

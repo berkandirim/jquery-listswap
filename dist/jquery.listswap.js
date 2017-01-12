@@ -76,14 +76,14 @@
             $('#' + prefix + '_' + instance).append('' +
                 '<ul id="src_list_' + instance + '" class="' + classes.list + '" data-instance="' + instance + '"></ul>' +
                 '<ul id="' + prefix + '_' + instance + '_controls' + '" class="' + classes.controls + '" data-instance="' + instance + '">' +
-                '<li class="' + classes.add + '">' +
-                '<span class="arrow"></span>' +
-                '<span class="label">' + options.labelAdd + '</span>' +
-                '</li>' +
-                '<li class="' + classes.remove + '">' +
-                '<span class="arrow"></span>' +
-                '<span class="label">' + options.labelRemove + '</span>' +
-                '</li>' +
+                '   <li class="' + classes.add + '">' +
+                '       <span class="arrow"></span>' +
+                '       <span class="label">' + options.labelAdd + '</span>' +
+                '   </li>' +
+                '   <li class="' + classes.remove + '">' +
+                '       <span class="arrow"></span>' +
+                '       <span class="label">' + options.labelRemove + '</span>' +
+                '   </li>' +
                 '</ul>' +
                 '<ul id="dest_list_' + instance + '" class="' + classes.list + '" data-instance="' + instance + '"></ul>'
             );
@@ -138,13 +138,10 @@
         setSearch: function(select, list) {
             if ($(select).attr('data-search')) {
                 var searchData = '<div class="' + classes.search + '">' +
-                    '<input type="text" id="searchList" name="searchList" value="' + $(select).attr('data-search') + '" />' +
+                    '<input type="text" placeholder="' + $(select).attr('data-search') + '" id="searchList" name="searchList" />' +
                     '<span class="clear"></span>' +
                     '</div>';
                 list.prepend(searchData);
-                if (!$(this).attr('data-text')) {
-                    list.find('.' + classes.search).addClass('list-round-class');
-                }
             }
         },
 
@@ -158,26 +155,25 @@
                     (text.indexOf(val) != -1) ? $(this).show() : $(this).hide();
                 });
             });
+            _this.clearButton(selector);
         },
-        
+
         removeSelection: function(selector) {
             $(selector + ' li.' + classes.option).each(function() {
-                if( $(this).hasClass(classes.selected) )
+                if ($(this).hasClass(classes.selected))
                     $(this).removeClass(classes.selected);
             });
         },
-        
+
         clearButton: function(selector) {
             $(selector + ' .' + classes.search + ' .clear').click(function() {
                 $(selector + ' .' + classes.search + ' #searchList').val('');
                 $(selector + ' .' + classes.search + ' #searchList').focus();
-                $(selector + ' > li').each(function(){
+                $(selector + ' > li').each(function() {
                     $(this).show();
                 });
-                refresh_list();
             });
         }
-        
     };
 
     $.fn[pluginName] = function(options) {
