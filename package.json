@@ -1,6 +1,6 @@
 {
     "name": "jquery.listswap",
-    "version": "0.1.0",
+    "version": "0.1.1",
     "description": "ListSwap is a jQuery plugin that allows you to swap (add/remove) items between two drop-down lists.",
     "repository": {
         "type": "git",
