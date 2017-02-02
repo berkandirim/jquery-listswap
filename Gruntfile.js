@@ -1,5 +1,4 @@
 module.exports = function(grunt) {
-    // Project configuration
     
     grunt.initConfig({
         sass: {
@@ -29,15 +28,17 @@ module.exports = function(grunt) {
             },
             js: {
                 files: 'lib/*.js',
-                tasks: ['uglify', 'copy']
+                tasks: ['uglify', 'copy', 'jshint']
             }
+        },
+        jshint: {
+            all: ['Gruntfile.js', 'lib/**/*.js', 'test/**/*.js']
         },
         uglify: {
             target: {
                 files: {
                     'dist/jquery.listswap.min.js': ['lib/jquery.listswap.js']
                 }
-                
             },
             options: {
                 sourceMap: true
@@ -74,6 +75,6 @@ module.exports = function(grunt) {
     require('load-grunt-tasks')(grunt, {pattern: ['grunt-*', '@*/grunt-*']});
 
     // Default task(s).
-    grunt.registerTask('default', ['sass', 'uglify', 'browserSync', 'watch']);
+    grunt.registerTask('default', ['sass', 'uglify', 'jshint', 'browserSync', 'watch']);
     grunt.registerTask('build', ['sass', 'uglify', 'copy']);
 };

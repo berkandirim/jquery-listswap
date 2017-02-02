@@ -5,8 +5,9 @@
  * Licensed under the MIT license
  */
 
-;
-(function($, window, document, undefined) {
+;(function($, window, document, undefined) {
+    
+    'use strict';
 
     var pluginName = "listSwap",
         defaults = {
@@ -67,7 +68,7 @@
             this.setLayout(this.element, source, destination, this.options);
             this.bindUIActions(this.element, source, destination, wrap);
 
-            instance++
+            instance++;
         },
 
         setLayout: function(el, src, dest, options) {
@@ -152,7 +153,7 @@
                 var val = $(this).val().toString().toLowerCase();
                 $(selector + ' > li').each(function() {
                     var text = $(this).text().toString().toLowerCase();
-                    (text.indexOf(val) != -1) ? $(this).show() : $(this).hide();
+                    if (text.indexOf(val) != -1)  $(this).show(); else $(this).hide();
                 });
             });
             _this.clearButton(selector);
