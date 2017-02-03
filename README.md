@@ -20,7 +20,7 @@ Usage
 
 Default Options
 ---------------
-```
+```js
 truncate : false, // Set to true to disable word wrap
 height : null,  // Set custom height
 labelAdd : '', // Set add label (Empty by default)
@@ -35,3 +35,4 @@ Roadmap
 - Add destroy method
 - Add update method
 - Add RTL support
+- Add titles to boxes
