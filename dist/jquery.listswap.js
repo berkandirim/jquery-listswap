@@ -172,9 +172,9 @@
         },
 
         clearButton: function(selector) {
-            $(selector + ' .' + classes.search + ' .clear').click(function() {
-                $(selector + ' .' + classes.search + ' #searchList').val('');
-                $(selector + ' .' + classes.search + ' #searchList').focus();
+            $(selector).prev(' .' + classes.search).find(' .clear').click(function() {
+                $(selector).prev(' .' + classes.search).find('.' + classes.searchBox).val('');
+                $(selector).prev(' .' + classes.search).find('.' + classes.searchBox).focus();
                 $(selector + ' > li').each(function() {
                     $(this).show();
                 });
