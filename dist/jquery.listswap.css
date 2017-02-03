@@ -29,19 +29,26 @@
   clip-path: inset(0 0 0 0);
 }
 
-.listswap-list {
+.listswap-list-wrap {
+  margin: 1em auto;
   width: 40%;
-  min-height: 200px;
   float: left;
   border: 1px solid #ccc;
   border-radius: 4px;
-  list-style: none;
+}
+
+.listswap-list {
+  margin: 0;
   padding-left: 0;
+  overflow-y: auto;
+  min-height: 100px;
+  list-style: none;
 }
 .listswap-list li {
   padding: 4px 8px;
 }
 .listswap-list li:hover {
+  cursor: pointer;
   background-color: lightyellow;
 }
 
@@ -99,6 +106,12 @@ li.listswap-selected, li.listswap-selected:hover {
 }
 .listswap-search .clear:before {
   content: "\00d7";
+}
+
+.listswap-truncate {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 /*# sourceMappingURL=jquery.listswap.css.map */

@@ -37,17 +37,24 @@ $radius: 4px;
     clip-path: inset(0 0 0 0);
 }
 
-.#{$prefix}-list {
+.#{$prefix}-list-wrap {
+    margin: 1em auto;
     width: 40%;
-    min-height: 200px;
     float: left;
     border: 1px solid $border;
     border-radius: $radius;
-    list-style: none;
+}
+
+.#{$prefix}-list {
+    margin: 0;
     padding-left: 0;
+    overflow-y: auto;
+    min-height: 100px;
+    list-style: none;
     li {
         padding: 4px 8px;
         &:hover {
+            cursor: pointer;
             background-color: lightyellow;
         }
     }
@@ -113,4 +120,10 @@ li.#{$prefix}-selected {
             content:"\00d7";
         }
     }
+}
+
+.#{$prefix}-truncate {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
