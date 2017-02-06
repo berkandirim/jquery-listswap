@@ -6,7 +6,11 @@ $prefix: 'listswap';
 $border: #ccc;
 $button: #ddd; 
 $selected: lightskyblue; 
+$hover: cornsilk;
+$title: white;
+$titlebg: coral;
 $radius: 4px;
+$radius-top: 4px 4px 0 0;
 
 /** -------------------------------------------
  	List Swap Styles
@@ -55,9 +59,17 @@ $radius: 4px;
         padding: 4px 8px;
         &:hover {
             cursor: pointer;
-            background-color: lightyellow;
+            background-color: $hover;
         }
     }
+}
+
+.#{$prefix}-title {
+    margin: 0;
+    padding: 4px 10px;
+    color: $title;
+    background-color: $titlebg;
+    border-radius: $radius-top;
 }
 
 li.#{$prefix}-selected {
