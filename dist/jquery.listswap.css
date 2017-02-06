@@ -49,7 +49,15 @@
 }
 .listswap-list li:hover {
   cursor: pointer;
-  background-color: lightyellow;
+  background-color: cornsilk;
+}
+
+.listswap-title {
+  margin: 0;
+  padding: 4px 10px;
+  color: white;
+  background-color: coral;
+  border-radius: 4px 4px 0 0;
 }
 
 li.listswap-selected, li.listswap-selected:hover {

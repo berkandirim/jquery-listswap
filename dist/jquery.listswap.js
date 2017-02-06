@@ -15,7 +15,9 @@
             height: null,
             labelAdd: '',
             labelRemove: '',
-            customClass: ''
+            customClass: '',
+            srcTitle: null,
+            destTitle: null
         },
         prefix = pluginName.toLowerCase(),
         classes = {
@@ -31,7 +33,8 @@
             option: prefix + '-option',
             search: prefix + '-search',
             searchBox: prefix + '-searchbox',
-            truncate: ''
+            truncate: '',
+            title: prefix + '-title'
         },
         events = {
             ready: 'ready.' + pluginName,
@@ -59,6 +62,10 @@
             var source = this.element[0],
                 destination = this.element[1],
                 wrap = prefix + '_' + instance;
+            
+            if (!source || !destination) {
+                console.error('Please provide both a source and a destination');
+            }
 
             this.setLayout(this.element, source, destination, this.options);
             this.bindUIActions(this.element, source, destination, wrap);
@@ -87,12 +94,21 @@
                 '   <ul id="dest_list_' + instance + '" class="' + classes.list + '" data-instance="' + instance + '"></ul>' +
                 '</div>'
             );
-            this.createList(src, $('#src_list_' + instance));
-            this.createList(dest, $('#dest_list_' + instance));
-            this.setSearch(src, $('#src_list_' + instance));
-            this.setSearch(dest, $('#dest_list_' + instance));
-            this.searchFilter('#src_list_' + instance);
-            this.searchFilter('#dest_list_' + instance);
+            var srcList = '#src_list_' + instance;
+            var destList = '#dest_list_' + instance;
+            this.createList(src, $(srcList));
+            this.createList(dest, $(destList));
+            this.setSearch(src, $(srcList));
+            this.setSearch(dest, $(destList));
+            this.searchFilter(srcList);
+            this.searchFilter(destList);
+            if (options.srcTitle && options.destTitle) {
+                this.addTitle($(srcList), options.srcTitle);
+                this.addTitle($(destList), options.destTitle);
+            }
+            if (options.srcTitle && !options.destTitle || !options.srcTitle && options.destTitle) {
+                console.error('Please add both srcTitle and destTitle');
+            }
         },
 
         bindUIActions: function(el, src, dest, wrap) {
@@ -179,6 +195,10 @@
                     $(this).show();
                 });
             });
+        },
+        
+        addTitle: function(selector, title) {
+            $(selector).parent().prepend('<h3 class="' + classes.title + '">' + title + '</h3>');
         }
     };
 

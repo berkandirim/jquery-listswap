@@ -10,6 +10,8 @@ ListSwap is a jQuery plugin that allows you to swap (add/remove) items between t
 - jQuery suppport: 1.3+
 - Browser support: All major browsers, IE8+
 
+###[Demo](http://dirim.co/jquery-listswap)
+
 Install with Bower
 ------------------
 `$ bower install jquery.listswap`
@@ -25,14 +27,13 @@ truncate : false, // Set to true to disable word wrap
 height : null,  // Set custom height
 labelAdd : '', // Set add label (Empty by default)
 labelRemove : '', // Set remove label (Empty by default)
-customClass : '' // Custom class for styling	
+customClass : '', // Custom class for styling	
+srcTitle: null, // Titles for boxes
+destTitle: null	 // Both are required
 ```
-
-**[Demo](http://dirim.co/jquery-listswap)**
 
 Roadmap
 -------
 - Add destroy method
 - Add update method
 - Add RTL support
-- Add titles to boxes
