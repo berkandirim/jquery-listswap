@@ -1,0 +1,64 @@
+body {
+    font: 18px/1.6 'Source Sans Pro', Helvetica, Arial, sans-serif;
+    margin: 40px auto;
+    max-width: 650px;
+    color: #666;
+    padding: 0 10px
+}
+
+h1, h2, h3 {
+    line-height: 1.2
+}
+
+h1 {
+    padding-bottom: 20px;
+    color: coral;
+    border-bottom: 1px solid;
+}
+
+h2, a {
+    color: crimson;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+pre, code {
+    border-radius: 4px;
+    font: 14px/1.6 'Source Code Pro', monospace;
+}
+
+code {
+    padding: 0.5em;
+    background: #F0F0F0;
+}
+
+.links {
+    margin: 40px 0;
+}
+
+.links a {
+    margin-right: 10px;
+    padding: 10px 20px;
+    text-decoration: none;
+    color: white;
+    background-color: crimson;
+    border-radius: 4px;
+    transition: background-color ease-in 200ms;
+}
+
+.links a:hover {
+    background-color: darkred;
+}
+
+footer {
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid coral;
+
+}
+
+.listswap-option, .listswap-controls {
+    font-size: 14px;
+}

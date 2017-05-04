@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery List Swap</title>
+    <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro|Source+Sans+Pro:400,700" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="../dist/jquery.listswap.min.css" />
+    <link rel="stylesheet" type="text/css" href="assets/css/page.css" />
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/styles/default.min.css">
+</head>
+<body>
+
+<header>
+    <h1>jQuery List Swap</h1>
+</header>
+
+<div class="links">
+    <a href="https://github.com/berkandirim/jquery-listswap">View on GitHub</a>
+    <a href="https://github.com/berkandirim/jquery-listswap/zipball/master">Download .zip</a>
+    <a href="https://github.com/berkandirim/jquery-listswap/tarball/master">Download .tar.gz</a>
+</div>
+
+<p>This is a more modern fork of <a href="https://github.com/phedde/listSwap">listSwap plugin</a> by <a href="https://github.com/phedde">@phedde</a><br>
+    <strong>Note:</strong> this version is still in development.</p>
+
+<p>ListSwap is a jQuery plugin that allows you to swap (add/remove) items between two drop-down lists.</p>
+
+<ul>
+    <li>jQuery suppport: 1.3+</li>
+    <li>Browser support: All major browsers, IE8+</li>
+</ul>
+
+<h2>Usage:</h2>
+
+<code>$('#source, #destination').listSwap();</code>
+
+<h2>Default Options:</h2>
+
+<pre><code class="javascript">truncate : false, // Set to true to disable word wrap
+height : null,  // Set custom height
+labelAdd : '', // Set add label (Empty by default)
+labelRemove : '', // Set remove label (Empty by default)
+customClass : '', // Custom class for styling
+srcTitle: null, // Titles for boxes
+destTitle: null  // Both are required
+</code></pre>
+
+<h2>Demo:</h2>
+
+<form method="post">
+
+    <select id="source" data-search="Search for options">
+        <option value="option_1_1">Option 1</option>
+        <option value="option_1_2">Why not option 2</option>
+        <option value="option_1_3">Here's another option 3</option>
+        <option value="option_1_4">What about option 4</option>
+        <option value="option_1_5">I'll go with option 5</option>
+        <option value="option_1_6">Let's stick to option 6</option>
+    </select>
+    <select id="destination" data-search="Search for options">
+    </select>
+
+    <select id="source2">
+        <option value="option_2_1">This is a very very very loong, too long to be in one line Option 1</option>
+        <option value="option_2_2">Why not option 2</option>
+        <option value="option_2_3">Here's another option 3</option>
+        <option value="option_2_4">What about option 4</option>
+        <option value="option_2_5">I'll go with option 5</option>
+        <option value="option_2_6">Let's stick to option 6</option>
+    </select>
+    <select id="destination2">
+    </select>
+    
+</form>
+
+<footer></footer>
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="../dist/jquery.listswap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+<script>
+    $('#source, #destination').listSwap();
+    $('#source2, #destination2').listSwap({
+        labelAdd: 'Add',
+        labelRemove: 'Remove',
+        truncate: true,
+        height: 135,
+        customClass: 'my-plugin-class',
+        srcTitle: 'Source Title',
+        destTitle: 'Destination Title'
+    });
+</script>
+</body>
+</html>
