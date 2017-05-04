@@ -1,5 +1,10 @@
-body {
+html {
     font: 18px/1.6 'Source Sans Pro', Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased !important;
+    text-rendering: optimizeLegibility;
+}
+
+body {
     margin: 40px auto;
     max-width: 650px;
     color: #666;
@@ -44,19 +49,12 @@ code {
     text-decoration: none;
     color: white;
     background-color: crimson;
-    border-radius: 4px;
+    border-radius: 5px;
     transition: background-color ease-in 200ms;
 }
 
 .links a:hover {
     background-color: darkred;
-}
-
-footer {
-    margin-top: 20px;
-    padding-top: 20px;
-    border-top: 1px solid coral;
-
 }
 
 .listswap-option, .listswap-controls {

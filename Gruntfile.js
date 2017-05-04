@@ -47,7 +47,9 @@ module.exports = function(grunt) {
         copy: {
             main: {
                 files: [
-                    {expand: true, cwd: 'lib', src: ['jquery.listswap.js'], dest: 'dist/'}
+                    {expand: true, cwd: 'lib', src: ['jquery.listswap.js'], dest: 'dist/'},
+                    {expand: true, cwd: 'dist', src: ['jquery.listswap.min.js', 'jquery.listswap.min.css'], dest: 'docs/assets/plugin/'}
+                    
                 ]
             }
         },

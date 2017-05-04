@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <title>jQuery List Swap</title>
     <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro|Source+Sans+Pro:400,700" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="../dist/jquery.listswap.min.css" />
-    <link rel="stylesheet" type="text/css" href="assets/css/page.css" />
+    <link rel="stylesheet" type="text/css" href="assets/plugin/jquery.listswap.min.css" />
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/styles/default.min.css">
+    <link rel="stylesheet" type="text/css" href="assets/page/page.css" />
 </head>
 <body>
 
@@ -31,8 +31,13 @@
 </ul>
 
 <h2>Usage:</h2>
+<p>
+    <code>$('#source, #destination').listSwap();</code><br>
+</p>
+<p>
+    Define search with <code>data-search="placeholder"</code> on list elements.
+</p>
 
-<code>$('#source, #destination').listSwap();</code>
 
 <h2>Default Options:</h2>
 
@@ -73,10 +78,8 @@ destTitle: null  // Both are required
     
 </form>
 
-<footer></footer>
-
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-<script src="../dist/jquery.listswap.min.js"></script>
+<script src="assets/plugin/jquery.listswap.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/highlight.min.js"></script>
 <script>hljs.initHighlightingOnLoad();</script>
 <script>

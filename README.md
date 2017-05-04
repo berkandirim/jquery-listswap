@@ -20,6 +20,8 @@ Usage
 -----
 `$('#source, #destination').listSwap();`
 
+Define search with `data-search="placeholder"` on list elements.
+
 Default Options
 ---------------
 ```js
